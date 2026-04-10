@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adversarial Peer Reviewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎓 Adversarial Peer Reviewer</h1>
+            <p class="tagline">AI-Powered Rigorous Academic Review</p>
+        </header>
+
+        <!-- Main Container -->
+        <div class="container">
+            <!-- Input Panel -->
+            <div class="panel input-panel">
+                <h2>Submit Your Abstract</h2>
+                <form id="reviewForm">
+                    <div class="form-group">
+                        <label for="title">Paper Title</label>
+                        <input 
+                            type="text" 
+                            id="title" 
+                            placeholder="Enter the title of your paper..." 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="abstract">Abstract</label>
+                        <textarea 
+                            id="abstract" 
+                            placeholder="Paste your abstract here (500-1000 words recommended)..." 
+                            rows="12"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="field">Research Field</label>
+                        <select id="field" required>
+                            <option value="">-- Select a field --</option>
+                            <option value="computer-science">Computer Science</option>
+                            <option value="machine-learning">Machine Learning / AI</option>
+                            <option value="biology">Biology</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="physics">Physics</option>
+                            <option value="mathematics">Mathematics</option>
+                            <option value="medicine">Medicine</option>
+                            <option value="psychology">Psychology</option>
+                            <option value="economics">Economics</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rigor">Rigor Level</label>
+                        <select id="rigor">
+                            <option value="strict">Strict (Highly Critical)</option>
+                            <option value="moderate" selected>Moderate (Balanced)</option>
+                            <option value="constructive">Constructive (Development-Focused)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Generate Adversarial Review</span>
+                        <span class="btn-loader" style="display: none;">⏳ Analyzing...</span>
+                    </button>
+                </form>
+
+                <div class="info-box">
+                    <h3>ℹ️ How It Works</h3>
+                    <ul>
+                        <li>Submit your paper abstract and details</li>
+                        <li>AI performs rigorous adversarial analysis</li>
+                        <li>Identifies minimum 3 critical weaknesses</li>
+                        <li>Provides concrete, actionable improvements</li>
+                        <li>Returns professional peer review format</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="panel output-panel">
+                <div id="outputContent" class="output-content">
+                    <div class="placeholder">
+                        <p>📝 Your adversarial peer review will appear here</p>
+                        <p style="font-size: 12px; color: #888; margin-top: 10px;">Submit an abstract to begin</p>
+                    </div>
+                </div>
+
+                <!-- Download Button -->
+                <button id="downloadBtn" class="download-btn" style="display: none;">
+                    ⬇️ Download as PDF
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Adversarial Peer Reviewer v1.0 | Powered by Claude AI | Education & Research</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2pdf@0.10.1/dist/html2pdf.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
